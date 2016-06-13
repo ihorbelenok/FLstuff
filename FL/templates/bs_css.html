@@ -1,0 +1,415 @@
+{% extends "base.html" %}
+{% block title %} Bootstrap CSS {% endblock title %}
+{% block body %}
+    <div class="container">
+        <h1>Stacked-to-horizontal</h1>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+              <div class="col-md-1">.col-md-1</div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">.col-md-8</div>
+              <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">.col-md-4</div>
+              <div class="col-md-4">.col-md-4</div>
+              <div class="col-md-4">.col-md-4</div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">.col-md-6</div>
+              <div class="col-md-6">.col-md-6</div>
+            </div>
+        </div><hr>
+        <h1>Mobile and desktop</h1>
+        <div class="container">
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row">
+              <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+              <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+            </div>
+
+            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+            <div class="row">
+              <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+              <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+              <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+            </div>
+
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+              <div class="col-xs-6">.col-xs-6</div>
+              <div class="col-xs-6">.col-xs-6</div>
+            </div>
+        </div><hr>
+        <h1>Mobile, tablet, desktop</h1>
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+            <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+            <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+            <!-- Optional: clear the XS cols if their content doesn't match in height -->
+            <div class="clearfix visible-xs"></div>
+            <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        </div>
+        </div><hr>
+        <h1>Headings</h1>
+        <div class="container">
+            <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+            <h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+            <h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+            <h4>h4. Bootstrap heading <small>Secondary text</small></h4>
+            <h5>h5. Bootstrap heading <small>Secondary text</small></h5>
+            <h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+        </div><hr>
+        <h1>Inline text elements</h1>
+        <div class="container">
+            <mark>Marked {% lorem 2 w random %}</mark>
+            <del>Deleted {% lorem 2 w random %}</del>
+            <s>Strikethrough {% lorem 2 w random %}</s>
+            <ins>Inserted {% lorem 2 w random %}</ins>
+            <u>Underlined {% lorem 2 w random %}</u>
+            <small>Small {% lorem 2 w random %}</small>
+            <strong>Bold {% lorem 2 w random %}</strong>
+            <em>Italics {% lorem 2 w random %}</em>
+        </div><hr>
+        <h1>Alignment classes</h1>
+        <div class="container">
+            <p class="text-left"><b>Left</b> aligned {% lorem 2 w random %}.</p>
+            <p class="text-center"><b>Center</b> aligned {% lorem 2 w random %}.</p>
+            <p class="text-right"><b>Right</b> aligned {% lorem 2 w random %}.</p>
+            <p class="text-justify"><b>Justified</b> {% lorem 30 w random %}.</p>
+            <p class="text-nowrap"><b>No wrap</b> {% lorem 30 w random %}.</p>
+        </div><hr>
+        <h1>Transformation classes</h1>
+        <div class="container">
+            <p class="text-lowercase"><b>Lowercase </b>{% lorem 15 w random %}.</p>
+            <p class="text-uppercase"><b>uppercase </b>{% lorem 15 w random %}.</p>
+            <p class="text-capitalize"><b>capitalized </b>{% lorem 15 w random %}.</p>
+        </div><br>
+        <h1>Abbreviations</h1>
+        <div class="container">
+            An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.<br>
+            <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.
+        </div><hr>
+        <h1>Addresses</h1>
+        <div class="container">
+        <address>
+          <strong>Twitter, Inc.</strong><br>
+          1355 Market Street, Suite 900<br>
+          San Francisco, CA 94103<br>
+          <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+
+        <address>
+          <strong>Full Name</strong><br>
+          <a href="mailto:#">first.last@example.com</a>
+        </address>
+    </div><hr>
+        <h1>Blockquotes</h1>
+        <div class="container">
+            <blockquote>
+              <b>Default blockquote</b> {% lorem 15 w random %}
+            </blockquote>
+            <blockquote>
+              <b>Blockquote with footer</b> {% lorem 25 w random %}
+              <footer>Footer from <cite title="source title example">Blockquote</cite></footer>
+            </blockquote>
+            <blockquote class="blockquote-reverse">
+              <b>Right-aligned</b> {% lorem 15 w random %}
+              <footer>Footer from <cite title="source title example">Blockquote-reverse</cite></footer>
+            </blockquote>
+        </div>
+        <h1>Lists</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Unordered</h2>
+                    <ul>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <ul>
+                            <li>{% lorem 2 w random %}</li>
+                            <li>{% lorem 2 w random %}</li>
+                            <li>{% lorem 2 w random %}</li>
+                        </ul>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h2>Ordered</h2>
+                    <ol>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <h2>Unstyled</h2>
+                    <ul class="list-unstyled">
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                        <ul>
+                            <li>{% lorem 2 w random %}</li>
+                            <li>{% lorem 2 w random %}</li>
+                            <li>{% lorem 2 w random %}</li>
+                        </ul>
+                        <li>{% lorem 5 w random %}</li>
+                        <li>{% lorem 5 w random %}</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>Inline</h2>
+            <ul class="list-inline">
+                <li>{% lorem 2 w random %}</li>
+                <li>{% lorem 2 w random %}</li>
+                <li>{% lorem 2 w random %}</li>
+                <li>{% lorem 2 w random %}</li>
+                <li>{% lorem 2 w random %}</li>
+            </ul>
+            <h2>Description</h2>
+            <dl>
+                <dt>{% lorem 2 w random %}</dt>
+                <dd>{% lorem 5 w random %}</dd>
+                <dt>{% lorem 2 w random %}</dt>
+                <dd>{% lorem 5 w random %}</dd>
+                <dt>{% lorem 2 w random %}</dt>
+                <dd>{% lorem 5 w random %}</dd>
+            </dl>
+            <h2>Horizontal description</h2>
+            <dl class="dl-horizontal">
+                <dt>{% lorem 2 w random %}</dt>
+                <dd>{% lorem 5 w random %}</dd>
+                <dt>{% lorem 2 w random %}</dt>
+                <dd>{% lorem 5 w random %}</dd>
+                <dt>{% lorem 2 w random %}</dt>
+                <dd>{% lorem 5 w random %}</dd>
+            </dl>
+
+        </div><hr>
+        <h1>Code</h1>
+        <div class="container">
+            <dl class="dl-horizontal">
+                <dt>Inline</dt>
+                <dd>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</dd>
+                <dt>User input</dt>
+                <dd>To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></dd>
+                <dt>Basic block</dt>
+                <dd><pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre></dd>
+                <dt>Variables</dt>
+                <dd><var>y</var> = <var>m</var><var>x</var> + <var>b</var></dd>
+                <dt>Sample output</dt>
+                <dd><samp>This text is meant to be treated as sample output from a computer program.</samp></dd>
+            </dl>
+        </div><hr>
+        <h1>Tables</h1>
+        <div class="container">
+            <h2>Basic example</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Bordered</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Hover rows</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Condensed table</h2>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Contextual classes</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                        <th>{% lorem 1 w random %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active">
+                        <td>active</td>
+                        <td class="success">{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr class="success">
+                        <td>success</td>
+                        <td class="info">{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr class="info">
+                        <td>info</td>
+                        <td class="warning">{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr class="warning">
+                        <td>warning</td>
+                        <td class="danger">{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                    <tr class="danger">
+                        <td>danger</td>
+                        <td class="success">{% lorem 1 w random %}</td>
+                        <td>{% lorem 1 w random %}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Responsive tables</h2>
+            make them scroll horizontally on small devices (under 768px)
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>{% lorem 1 w random %}</th>
+                            <th>{% lorem 1 w random %}</th>
+                            <th>{% lorem 1 w random %}</th>
+                            <th>{% lorem 1 w random %}</th>
+                            <th>{% lorem 1 w random %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                        </tr>
+                        <tr>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                            <td>{% lorem 1 w random %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div><hr>
+    </div>
+{% endblock %}
