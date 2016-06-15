@@ -19,5 +19,6 @@ from FL import views
 
 urlpatterns = [
     url(r'^$', views.bs_css, name='bs_css'),
+    url(r'^components/', views.bs_components, name='bs_components'),
     url(r'^admin/', admin.site.urls),
 ]
