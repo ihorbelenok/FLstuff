@@ -18,7 +18,10 @@ from django.contrib import admin
 from FL import views
 
 urlpatterns = [
-    url(r'^$', views.bs_css, name='bs_css'),
-    url(r'^components/', views.bs_components, name='bs_components'),
+    url(r'^$', views.frontpage, name='frontpage'),
+    url(r'^bs_css/$', views.bs_css, name='bs_css'),
+    url(r'^bs_comp/$', views.bs_components, name='bs_components'),
+    url(r'^bs_theme/$', views.bs_theme, name='bs_theme'),
+    url(r'^bs_just/$', views.bs_just, name='bs_justify'),
     url(r'^admin/', admin.site.urls),
 ]

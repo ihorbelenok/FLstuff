@@ -1,0 +1,48 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme Template for Bootstrap</title>
+    <!-- Include Styles -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/justified.css" %}">
+</head>
+<body>
+<div class="container">
+    <div class="conthead">
+        <h3 class="text-muted">Freelance intensive</h3>
+        <ul class="nav nav-justified">
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">HW1 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url "bs_css" %}">Bootstrap CSS</a></li>
+                    <li><a href="{% url "bs_components" %}">Bootstrap components</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{% url "bs_theme" %}">Bootstrap theme</a></li>
+                    <li><a href="{% url "bs_justify" %}">Justified menu</a></li>
+                </ul>
+            </li>
+            <li class="disabled"><a href="#">HW2</a></li>
+            <li class="disabled"><a href="#">HW3</a></li>
+            <li class="disabled"><a href="#">HW4</a></li>
+            <li class="disabled"><a href="#">HW5</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Javascripts Inclusion -->
+<!-- jQuery Core -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+</body>
+</html>
