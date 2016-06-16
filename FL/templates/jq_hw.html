@@ -20,19 +20,16 @@
 {% block extra_js %}
     <script>
         $("#green-rect-btn").click(function () {
-            if ($("#rectangle").css("display") == "none") {
-                parseInt($("#green-rect-btn > .badge").text(parseInt($("#green-rect-btn > .badge").text()) + 1));
-            }
-
-            $("#rectangle").toggle("slow");
+            $("#rectangle").toggle("slow", function () {
+                if ($("#rectangle").css("display") != "none") {
+                    parseInt($("#green-rect-btn > .badge").text(parseInt($("#green-rect-btn > .badge").text()) + 1));
+                }
+            });
             $("#change-color-btn > .label").css("display", "none");
         });
 
         $("#change-color-btn").click(function () {
-            var orange = "rgb(255, 165, 0)";
-            var red = "rgb(255, 0, 0)";
-            var green = "rgb(0, 128, 0)";
-            var colors = [orange, red, green];
+            var colors = ["rgb(255, 165, 0)", "rgb(255, 0, 0)", "rgb(0, 128, 0)"];
 
             var isVisible = $("#rectangle").css("display");
             if (isVisible == "none") {
