@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block title %} jQuery functions {% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "css/jq_hw.css" %}">
+{% endblock %}
+{% block body %}
+
+    <div class="container" style="padding-top: 10px">
+        <button class="btn" id="green-rect-btn">Toggle rectangle <span class="badge">0</span></button>
+        <button class="btn" id="change-color-btn">
+            Change color <span class="label label-info" style="display: none">Toggle rectangle first</span>
+        </button>
+        <div id="rectangle"></div>
+    </div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        $("#green-rect-btn").click(function () {
+            if ($("#rectangle").css("display") == "none") {
+                parseInt($("#green-rect-btn > .badge").text(parseInt($("#green-rect-btn > .badge").text()) + 1));
+            }
+
+            $("#rectangle").toggle("slow");
+            $("#change-color-btn > .label").css("display", "none");
+        });
+
+        $("#change-color-btn").click(function () {
+            var orange = "rgb(255, 165, 0)";
+            var red = "rgb(255, 0, 0)";
+            var green = "rgb(0, 128, 0)";
+            var colors = [orange, red, green];
+
+            var isVisible = $("#rectangle").css("display");
+            if (isVisible == "none") {
+                $("#change-color-btn > .label").css("display", "inline");
+            }
+            else {
+                var currentColor = $("#rectangle").css("background-color");
+                colors = jQuery.grep(colors, function (color) {
+                    return color != currentColor;
+                });
+                $("#rectangle").css("background-color", colors[Math.floor(Math.random() * 2)]);
+            }
+        })
+    </script>
+{% endblock %}

@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^bs_comp/$', views.bs_components, name='bs_components'),
     url(r'^bs_theme/$', views.bs_theme, name='bs_theme'),
     url(r'^bs_just/$', views.bs_just, name='bs_justify'),
+    url(r'^jq_func/$', views.jq_functions, name='jq_functions'),
+    url(r'^jq_hw/$', views.jq_hw, name='jq_homework'),
     url(r'^admin/', admin.site.urls),
 ]

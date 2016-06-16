@@ -27,11 +27,19 @@
                     <li><a href="{% url "bs_justify" %}">Justified menu</a></li>
                 </ul>
             </li>
-            <li class="disabled"><a href="#">HW2</a></li>
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">HW2 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url "jq_functions" %}">jQuery functions</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{% url "jq_homework" %}">Homework</a></li>
+                </ul>
+            </li>
             <li class="disabled"><a href="#">HW3</a></li>
             <li class="disabled"><a href="#">HW4</a></li>
             <li class="disabled"><a href="#">HW5</a></li>
         </ul>
+    </div>
+    <div class="content">
     </div>
 </div>
 

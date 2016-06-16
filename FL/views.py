@@ -17,5 +17,12 @@ def bs_just(request):
     return render(request, 'justified-nav.html')
 
 
+def jq_functions(request):
+    return render(request, 'jq_functions.html')
+
+
+def jq_hw(request):
+    return render(request, 'jq_hw.html')
+
 def frontpage(request):
     return render(request, 'frontpage.html')

@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block title %} jQuery functions {% endblock title %}
+{% block body %}
+    <div class="container">
+    <div class="page-header">
+        <h1>.css</h1>
+    </div>
+    <h1>
+        <span class="label css-lbl label-default">Default</span>
+        <span class="label css-lbl label-primary">Primary</span>
+        <span class="label css-lbl label-success">Success</span>
+        <span class="label css-lbl label-info">Info</span>
+        <span class="label css-lbl label-warning">Warning</span>
+        <span class="label css-lbl label-danger">Danger</span>
+    </h1>
+    <span id="css_result">Press any label to see it's background-color</span>
+
+    <div class="page-header">
+        <h1>.addClass</h1>
+    </div>
+    <div class="row">
+        <button class="btn" id="addClass-btn">Test Button</button>
+    </div>
+    <div class="row" style="padding-top: 10px">
+        <button class="btn btn-lg" id="addClass-lg">Add btn-lg</button>
+        <button class="btn btn-danger" id="addClass-danger">Add btn-danger</button>
+    </div>
+
+    <div class="page-header">
+        <h1>.removeClass</h1>
+    </div>
+    <div class="row">
+        <button class="btn btn-xs btn-info" id="remClass-btn">Test Button</button>
+    </div>
+    <div class="row" style="padding-top: 10px">
+        <button class="btn" id="remClass-xs">Remove btn-xs</button>
+        <button class="btn" id="remClass-info">Remove btn-info</button>
+    </div>
+
+    <div class="page-header">
+        <h1>.animate</h1>
+    </div>
+    <div class="row">
+        <button class="btn" id="animate-btn">Test Button</button>
+    </div>
+    <div class="row" style="padding-top: 10px">
+        <button class="btn" id="animate-width">Animate width</button>
+        <button class="btn" id="animate-height">Animate height</button>
+        <button class="btn" id="animate-both">Animate both</button>
+    </div>
+
+    <div class="page-header">
+        <h1>.toggle</h1>
+    </div>
+    <div class="container">
+        <button class="btn" id="toggle-btn">Toggle</button>
+        <div class="jumbotron" id="toggle-jumb">
+            <h1>{% lorem 2 w random %}</h1>
+            {% lorem 2 p random %}
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>.remove</h1>
+    </div>
+    <div class="container">
+        <button class="btn btn-warning" id="remove-red">Remove all <strong>RED</strong> buttons from page!</button>
+        <button class="btn btn-danger" id="remove-btn">Remove all buttons from page!</button>
+        <strong>WARNING! Unreversible!</strong>
+    </div>
+
+    <div class="page-header">
+        <h1>.empty</h1>
+    </div>
+    <div class="container">
+        <button class="btn" id="empty-btn">Clear jumbotron's text</button>
+        <div class="jumbotron" id="empty-jumb">
+            <h1>{% lorem 2 w random %}</h1>
+            <div class="empty-jumb-text">{% lorem 2 p random %}</div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>.html & .text</h1>
+    </div>
+    <div class="container">
+        <button class="btn" id="html-btn">Get jumbotron code</button>
+        <div class="jumbotron" id="html-jumb">
+            <h1>{% lorem 2 w random %}</h1>
+            <div class="html-jumb-text">{% lorem 2 p random %}</div>
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>.val</h1>
+    </div>
+    <div class="container">
+        <input type="text" id="val1">
+        <input type="text" id="val2">
+        <button class="btn" id="val-btn">Concatenate</button>
+        <input type="text" id="val3">
+    </div>
+
+    <div class="page-header">
+        <h1>.prop</h1>
+    </div>
+    <div class="container">
+        <input type="checkbox" id="prop-chbox"/>
+        <button class="btn" id="prop-btn">Toggle switchbox</button>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $(".css-lbl").click(function () {
+            var color = $(this).css("background-color");
+            $("#css_result").html("background-color: " + color);
+        });
+
+        $("#addClass-lg").click(function () {
+            $("#addClass-btn").addClass("btn-lg");
+        });
+
+        $("#addClass-danger").click(function () {
+            $("#addClass-btn").addClass("btn-danger");
+        });
+
+        $("#remClass-xs").click(function () {
+            $("#remClass-btn").removeClass("btn-xs");
+        });
+
+        $("#remClass-info").click(function () {
+            $("#remClass-btn").removeClass("btn-info");
+        });
+
+        $("#animate-width").click(function () {
+            $("#animate-btn").animate({width: "300px"}, 1000);
+        });
+
+        $("#animate-height").click(function () {
+            $("#animate-btn").animate({height: "100px"}, 1000);
+        });
+
+        $("#animate-both").click(function () {
+            $("#animate-btn").animate({width: "300px", height: "100px"}, 1000);
+        });
+
+        $("#toggle-btn").click(function () {
+            $("#toggle-jumb").toggle("slow");
+        });
+
+        $("#remove-btn").click(function () {
+            $(".btn").remove();
+        });
+
+        $("#remove-red").click(function () {
+            $(".btn").remove(".btn-danger");
+        });
+
+        $("#empty-btn").click(function () {
+            $(".empty-jumb-text").empty();
+        });
+
+        $("#html-btn").click(function () {
+            var htmlString = $("#html-jumb").html();
+            $("#html-jumb").text(htmlString);
+        });
+
+        $("#val-btn").click(function () {
+            $("#val3").val($("#val1").val() + $("#val2").val());
+        });
+
+        $("#prop-btn").click(function () {
+            var propBoolean = $("#prop-chbox").prop("checked");
+            $("#prop-chbox").prop("checked", !propBoolean);
+        });
+
+    </script>
+{% endblock %}
