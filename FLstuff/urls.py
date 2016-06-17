@@ -25,5 +25,7 @@ urlpatterns = [
     url(r'^bs_just/$', views.bs_just, name='bs_justify'),
     url(r'^jq_func/$', views.jq_functions, name='jq_functions'),
     url(r'^jq_hw/$', views.jq_hw, name='jq_homework'),
+    url(r'^plugins/$', views.plugins, name='plugins'),
+    url(r'^hw2_adv/$', views.hw2_advanced, name='hw2_adv'),
     url(r'^admin/', admin.site.urls),
 ]
