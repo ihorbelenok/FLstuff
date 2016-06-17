@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static from staticfiles %}
 {% load index %}
+{% load divide %}
 {% block title %} jQuery functions {% endblock title %}
 {% block extra_css %}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
@@ -23,9 +24,7 @@
                     {% with forloop.counter0 as ind %}
                         <tr>
                             {% for entry in data %}
-                                <td>
-                                    {{ entry.numbers|index:ind }}
-                                </td>
+                                <td>{{ entry.numbers|index:ind }}</td>
                             {% endfor %}
                         </tr>
                     {% endwith %}
@@ -56,6 +55,10 @@
         <div class="container" id="drill-col-chart">
             style="min-width: 310px; height: 400px; margin: 0 auto"
         </div>
+
+        <div class="container" id="drill-pie-chart">
+            style="min-width: 310px; height: 400px; margin: 0 auto"
+        </div>
     </div>
 
 
@@ -65,6 +68,7 @@
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
     <script>
         $("#table-btn").click(function () {
             $("#table-btn").toggle("slow");
@@ -74,7 +78,7 @@
             $('#main-tbl').DataTable({
                 "ordering": false,
                 "searching": false,
-                "pageLength": 25
+                "pageLength": 5
             });
         });
 
@@ -291,43 +295,33 @@
             },
             title: {
                 text: 'Drilldown Column Highchart',
-                x: -20 //center
             },
             subtitle: {
                 text: 'subtitle',
                 x: -20
             },
             xAxis: {
-                title: {
-                    text: 'index'
-                }
+                type: 'category'
             },
             yAxis: {
                 title: {
                     text: 'value'
                 },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
+            },
+            legend: {
+                enabled: false
             },
             plotOptions: {
                 series: {
                     borderWidth: 0,
                     dataLabels: {
-                        enabled: true,
-                        format: '{point.y:.1f}'
+                        enabled: true
                     }
                 }
             },
             tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
+                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b><br/>'
             },
             series: [{
                 name: "Letters",
@@ -337,7 +331,7 @@
                         {% if forloop.counter0 != 0 %},{% endif %}
                         {
                             name: "{{ entry.name }}",
-                            y: "{{ entry.summ }}",
+                            y: {{ entry.summ }},
                             drilldown: "{{ entry.name }}"
                         }
                     {% endfor %}
@@ -351,13 +345,67 @@
                             name: "{{ entry.name }}",
                             id: "{{ entry.name }}",
                             data: [
-                                {% if forloop.counter0 != 0 %},{% endif %}
                                 {% for num in entry.numbers %}
-                                    {% if forloop.counter0 != 0 %},{% endif %}
-                                    ['{{ forloop.counter }}',
-                                        {{ num }}]
+                                    {% if forloop.counter0 != 0 %},{% endif %}['{{ forloop.counter }}', {{ num }}]
                                 {% endfor %}
+                            ]
+                        }
+                    {% endfor %}
+                ]
+            }
+        });
 
+        $('#drill-pie-chart').highcharts({
+            chart: {
+                type: 'pie',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Drilldown Piechart'
+            },
+            subtitle: {
+                text: 'subtitle'
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}: {point.y:.1f}%'
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+            },
+            series: [{
+                name: "Letters",
+                colorByPoint: true,
+                data: [
+                    {% for entry in data %}
+                        {% if forloop.counter0 != 0 %},{% endif %}
+                        {
+                            name: "{{ entry.name }}",
+                            y: {{ entry.summ|divide:total }},
+                            drilldown: "{{ entry.name }}"
+                        }
+                    {% endfor %}
+                ]
+            }],
+            drilldown: {
+                series: [
+                    {% for entry in data %}
+                        {% if forloop.counter0 != 0 %},{% endif %}
+                        {
+                            name: "{{ entry.name }}",
+                            id: "{{ entry.name }}",
+                            data: [
+                                {% for num in entry.numbers %}
+                                    {% if forloop.counter0 != 0 %},{% endif %}['{{ forloop.counter }}', {{ num|divide:entry.summ }}]
+                                {% endfor %}
                             ]
                         }
                     {% endfor %}

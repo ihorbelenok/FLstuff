@@ -33,14 +33,16 @@ def plugins(request):
 def hw2_advanced(request):
     names = ["Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta"]
     data = []
+    total = 0
     for name in names:
         entryName = name
-        numbers = [random.randint(0, 100) for i in range(50)]
+        numbers = [random.randint(0, 100) for i in range(20)]
         summ = sum(numbers)
+        total += summ
         entry = {'name': entryName, 'numbers': numbers, 'summ': summ}
         data.append(entry)
     # print data
-    return render(request, 'hw2_advanced.html', {'data': data})
+    return render(request, 'hw2_advanced.html', {'data': data, 'total': total})
 
 
 
