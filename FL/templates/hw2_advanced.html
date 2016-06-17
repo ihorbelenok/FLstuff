@@ -1,0 +1,368 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load index %}
+{% block title %} jQuery functions {% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="padding-top: 10px">
+        <button class="btn btn-primary" id="table-btn">Сделать все збс</button>
+        <div class="container" style="padding-top: 30px">
+            <table class="table table-bordered" id="main-tbl">
+                <thead>
+                <tr>
+                    {% for entry in data %}
+                        <th>{{ entry.name }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for number in data.1.numbers %}
+                    {% with forloop.counter0 as ind %}
+                        <tr>
+                            {% for entry in data %}
+                                <td>
+                                    {{ entry.numbers|index:ind }}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endwith %}
+                {% endfor %}
+
+                </tbody>
+
+
+            </table>
+        </div>
+
+        <div class="container" id="line-basic-chart">
+            style="min-width: 310px; height: 400px; margin: 0 auto"
+        </div>
+
+        <div class="container" id="line-labels-chart">
+            style="min-width: 310px; height: 400px; margin: 0 auto"
+        </div>
+
+        <div class="container" id="percent-high-chart">
+            style="min-width: 310px; height: 400px; margin: 0 auto"
+        </div>
+
+        <div class="container" id="basic-col-chart">
+            style="min-width: 310px; height: 400px; margin: 0 auto"
+        </div>
+
+        <div class="container" id="drill-col-chart">
+            style="min-width: 310px; height: 400px; margin: 0 auto"
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+        $("#table-btn").click(function () {
+            $("#table-btn").toggle("slow");
+            $("#main-tbl").removeClass("table");
+            $("#main-tbl").removeClass("table-bordered");
+            $("#main-tbl").addClass("display");
+            $('#main-tbl').DataTable({
+                "ordering": false,
+                "searching": false,
+                "pageLength": 25
+            });
+        });
+
+        $('#line-basic-chart').highcharts({
+            title: {
+                text: 'Basic Line Chart Title',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'subtitle',
+                x: -20
+            },
+            xAxis: {
+                title: {
+                    text: 'index'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [
+                {% for entry in data %}
+                    {% if forloop.counter0 != 0 %},{% endif %}
+                    {
+                        name: "{{ entry.name }}",
+                        data: {{ entry.numbers }}
+                    }
+                {% endfor %}
+            ]
+        });
+
+        $('#line-labels-chart').highcharts({
+            title: {
+                text: 'Labeled Line Chart Title',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'subtitle',
+                x: -20
+            },
+            xAxis: {
+                title: {
+                    text: 'index'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: false
+                }
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [
+                {% for entry in data %}
+                    {% if forloop.counter0 != 0 %},{% endif %}
+                    {
+                        name: "{{ entry.name }}",
+                        data: {{ entry.numbers }}
+                    }
+                {% endfor %}
+            ]
+        });
+
+        $('#percent-high-chart').highcharts({
+            chart: {
+                type: 'area'
+            },
+            title: {
+                text: 'Percentage Highchart',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'subtitle',
+                x: -20
+            },
+            xAxis: {
+                title: {
+                    text: 'index'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            plotOptions: {
+                area: {
+                    stacking: 'percent',
+                    lineColor: '#ffffff',
+                    lineWidth: 1,
+                    marker: {
+                        lineWidth: 1,
+                        lineColor: '#ffffff'
+                    }
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> {point.y:,.0f}<br/>',
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [
+                {% for entry in data %}
+                    {% if forloop.counter0 != 0 %},{% endif %}
+                    {
+                        name: "{{ entry.name }}",
+                        data: {{ entry.numbers }}
+                    }
+                {% endfor %}
+            ]
+        });
+
+        $('#basic-col-chart').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Basic Column Highchart',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'subtitle',
+                x: -20
+            },
+            xAxis: {
+                title: {
+                    text: 'index'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            series: [
+                {% for entry in data %}
+                    {% if forloop.counter0 != 0 %},{% endif %}
+                    {
+                        name: "{{ entry.name }}",
+                        data: {{ entry.numbers }}
+                    }
+                {% endfor %}
+            ]
+        });
+
+        $('#drill-col-chart').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Drilldown Column Highchart',
+                x: -20 //center
+            },
+            subtitle: {
+                text: 'subtitle',
+                x: -20
+            },
+            xAxis: {
+                title: {
+                    text: 'index'
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y:.1f}'
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            series: [{
+                name: "Letters",
+                colorByPoint: true,
+                data: [
+                    {% for entry in data %}
+                        {% if forloop.counter0 != 0 %},{% endif %}
+                        {
+                            name: "{{ entry.name }}",
+                            y: "{{ entry.summ }}",
+                            drilldown: "{{ entry.name }}"
+                        }
+                    {% endfor %}
+                ]
+            }],
+            drilldown: {
+                series: [
+                    {% for entry in data %}
+                        {% if forloop.counter0 != 0 %},{% endif %}
+                        {
+                            name: "{{ entry.name }}",
+                            id: "{{ entry.name }}",
+                            data: [
+                                {% if forloop.counter0 != 0 %},{% endif %}
+                                {% for num in entry.numbers %}
+                                    {% if forloop.counter0 != 0 %},{% endif %}
+                                    ['{{ forloop.counter }}',
+                                        {{ num }}]
+                                {% endfor %}
+
+                            ]
+                        }
+                    {% endfor %}
+                ]
+            }
+        });
+    </script>
+{% endblock %}
