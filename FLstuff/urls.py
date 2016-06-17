@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'^jq_hw/$', views.jq_hw, name='jq_homework'),
     url(r'^plugins/$', views.plugins, name='plugins'),
     url(r'^hw2_adv/$', views.hw2_advanced, name='hw2_adv'),
+    url(r'^hw2_adv_json/json/$', views.hw2_json, name='hw2_json'),
+    url(r'^hw2_adv_json/$', views.hw2_table_json, name='hw2_tbl_json'),
     url(r'^admin/', admin.site.urls),
 ]

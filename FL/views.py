@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+import json
 import random
 
 # Create your views here.
@@ -43,6 +45,21 @@ def hw2_advanced(request):
         data.append(entry)
     # print data
     return render(request, 'hw2_advanced.html', {'data': data, 'total': total})
+
+def hw2_json(request):
+    data = []
+    for i in range(1000):
+        entry={}
+        entry['name'] = 'Name'+str(i)
+        entry['marks'] = [random.randint(1, 12) for i in range(6)]
+        data.append(entry)
+
+    # print data
+    return HttpResponse('{"data":'+json.dumps(data)+'}')
+
+def hw2_table_json(request):
+    return render(request, 'hw2_advanced_json.html')
+
 
 
 

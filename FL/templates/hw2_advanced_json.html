@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load index %}
+{% load divide %}
+{% block title %} jQuery functions {% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="padding-top: 10px">
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Algebra</th>
+                <th>Geometry</th>
+                <th>Physics</th>
+                <th>Ukrainian</th>
+                <th>English</th>
+                <th>Computer Science</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Algebra</th>
+                <th>Geometry</th>
+                <th>Physics</th>
+                <th>Ukrainian</th>
+                <th>English</th>
+                <th>Computer Science</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "ajax": "json/",
+                "deferRender": true,
+                "columns": [
+                    {"data": "name"},
+                    {"data": "marks.0"},
+                    {"data": "marks.1"},
+                    {"data": "marks.2"},
+                    {"data": "marks.3"},
+                    {"data": "marks.4"},
+                    {"data": "marks.5"}
+                ]
+            });
+        });
+    </script>
+{% endblock %}
