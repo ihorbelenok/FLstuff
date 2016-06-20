@@ -60,6 +60,9 @@ def hw2_json(request):
 def hw2_table_json(request):
     return render(request, 'hw2_advanced_json.html')
 
+def hw3(request):
+    return render(request, 'hw3/landing.html')
+
 
 
 
