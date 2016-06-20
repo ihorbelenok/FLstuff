@@ -364,7 +364,7 @@ a.fancybox:hover .zoom-icon {
 
 .footer {
     background-color: #2a2b2b;
-    padding-top: 40px;
+    padding: 40px 0px;
     color: #fff;
 }
 
@@ -386,4 +386,39 @@ a.fancybox:hover .zoom-icon {
 
 .content > .container > .row {
     padding: 60px 0;
+}
+
+.fa-shopping-cart .badge {
+    position: relative;
+    z-index: 1;
+    top: -10px;
+    left: -10px;
+    background-color: #72c02c;
+}
+
+.nav a {
+    background-color: transparent !important;
+}
+
+.squeezed .collapse .navbar-nav > li:hover > a {
+    color: #72c02c;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.collapse .navbar-nav > li.open > .dropdown-menu {
+    display: none;
+    border-top: solid #72c02c;
+}
+
+.collapse .navbar-nav > li:hover > .dropdown-menu {
+    display: block;
+    border-top: solid #72c02c;
+}
+
+.squeezed .collapse .navbar-nav > li.active {
+    color: #72c02c;
 }
