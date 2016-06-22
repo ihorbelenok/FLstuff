@@ -23,7 +23,295 @@
 {% endblock %}
 
 {% block body %}
+    <div class="top-nav">
+        <div class="container top-nav-container">
 
+            <div class="top-nav-logo">
+                <a href="#">
+                    <img class="logo-light" src="{% static "hw3/img/logo3-light.png" %}" alt="logo">
+                    <img class="logo-dark" src="{% static "hw3/img/logo3-dark.png" %}" alt="logo">
+                </a>
+            </div>
+
+            <button type="button" class="top-nav-hamburger">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <div class="top-nav-icons">
+                <button class="icons-button icons-cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="badge">0</span>
+                </button>
+                <div class="shopping-cart-menu">
+                    <h4 class="cart-list">No products in the cart</h4>
+                    <a class="btn-green"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
+                    <span class="cart-total">TOTAL: <strong>$0.00</strong></span>
+                </div>
+
+                <button class="icons-button icons-search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <div class="search-line search-line-sq">
+                    <input class="search-input" type="text" placeholder="start searching ...">
+                </div>
+            </div>
+
+            <div class="top-navbar">
+                <ul class="top-nav-menu">
+                    <li class="active">
+                        <a href="#">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown marked">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li class="submenu">
+                                        <a href="#">{% lorem 2 w random %}</a>
+                                        <ul class="dropdown marked">
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 3 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                        <ul class="dropdown">
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown marked">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li class="submenu">
+                                        <a href="#">{% lorem 2 w random %}</a>
+                                        <ul class="dropdown marked">
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 3 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                        <ul class="dropdown">
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown marked">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li class="submenu">
+                                        <a href="#">{% lorem 2 w random %}</a>
+                                        <ul class="dropdown marked">
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 3 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                        <ul class="dropdown">
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown marked">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li class="submenu">
+                                        <a href="#">{% lorem 2 w random %}</a>
+                                        <ul class="dropdown marked">
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 3 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Features</a>
+                        <ul class="dropdown">
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown marked">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li class="submenu">
+                                        <a href="#">{% lorem 2 w random %}</a>
+                                        <ul class="dropdown marked">
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 3 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#">{% lorem 2 w random %}</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                    <li><a href="#">{% lorem 2 w random %}</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Shortcodes</a>
+                    </li>
+                    <li>
+                        <a href="#">Demos</a>
+                        <ul class="dropdown">
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                            <li><a href="#">{% lorem 2 w random %}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
 
     <div class="video-title"
          style="background: url({% static "hw3/img/video-business-img1.jpg" %}) no-repeat center; background-size: cover;">
@@ -46,6 +334,7 @@
             </div>
         </div>
     </div>
+
     <div class="content">
         <div class="container">
             <div class="row text-center">
@@ -67,6 +356,7 @@
             </div>
         </div>
     </div>
+
     <div class="content lighter">
         <div class="container ">
             <div class="row">
@@ -91,7 +381,6 @@
         </div>
     </div>
 
-
     <div class="content lightest">
         <div class="container recent-works">
             <div class="col-header">
@@ -101,7 +390,7 @@
                 porttitor turpis sed fermentum. Nullam sodales blandit nisi, tristique tempor nunc hendrerit at. Sed
                 posuere mollis orci</p>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <div class="thumbnail-container">
                         <a href="{% static "hw3/img/img9.jpg" %}" class="thumbnail fancybox" data-rel="gallery">
                             <img src="{% static "hw3/img/img9.jpg" %}" class="full-width img-responsive" alt="">
@@ -110,31 +399,37 @@
 							</span>
                         </a>
                     </div>
-                    <h4>Project One</h4>
+                    <div class="col-header">
+                        <h3 class="green-line-left">Project One</h3>
+                    </div>
                     <small class="tags-line"><i class="fa fa-tag" aria-hidden="true"></i><a href="#">Technology</a>, <a
                             href="#">Business</a></small>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <a href="{% static "hw3/img/img18.jpg" %}" class="thumbnail fancybox" data-rel="gallery">
                         <img src="{% static "hw3/img/img18.jpg" %}" class="full-width img-responsive" alt="">
                         <span class="zoom-icon">
 								<i class="fa fa-search-plus" aria-hidden="true"></i>
 							</span>
                     </a>
-                    <h4>Project Two</h4>
+                    <div class="col-header">
+                        <h3 class="green-line-left">Project Two</h3>
+                    </div>
                     <small class="tags-line"><i class="fa fa-tag" aria-hidden="true"></i><a href="#">Technology</a>, <a
                             href="#">Business</a></small>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-sm-4">
                     <a href="{% static "hw3/img/img22.jpg" %}" class="thumbnail fancybox" data-rel="gallery">
                         <img src="{% static "hw3/img/img22.jpg" %}" class="full-width img-responsive" alt="">
                         <span class="zoom-icon">
 								<i class="fa fa-search-plus" aria-hidden="true"></i>
 							</span>
                     </a>
-                    <h4>Project Three</h4>
+                    <div class="col-header">
+                        <h3 class="green-line-left">Project Three</h3>
+                    </div>
                     <small class="tags-line"><i class="fa fa-tag" aria-hidden="true"></i><a href="#">Technology</a>, <a
                             href="#">Business</a></small>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet</p>
@@ -184,14 +479,14 @@
                 <h3 class="green-line-left">Latest Shots</h3>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <div class="latest-carousel">
                         <div class="item"><img src="{% static "hw3/img/img12.jpg" %}" alt="Shot1"></div>
                         <div class="item"><img src="{% static "hw3/img/img16.jpg" %}" alt="Shot2"></div>
                         <div class="item"><img src="{% static "hw3/img/img22.jpg" %}" alt="Shot3"></div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <h4>Justo cras odio apibus ac afilisi</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta ipsum vel mi gravida mattis. Ut
                         sit amet laoreet diam. Fusce iaculis sollicitudin purus, in tristique urna. Suspendisse potenti.
@@ -215,7 +510,7 @@
                 fermentum. Nullam sodales blandit nisi, tristique tempor nunc hendrerit at. Sed posuere mollis orci</p>
             <div class="row">
                 <div class="row">
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 text-center">
                         <div class="say-container">
                             <img class="img-circle img-responsive" src="{% static "hw3/img/img1-sm.jpg" %}" alt="">
                             <h3>Anthony Connor</h3>
@@ -224,16 +519,16 @@
                                 interduml"</p>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 text-center">
                         <div class="say-container">
                             <img class="img-circle img-responsive" src="{% static "hw3/img/img2-sm.jpg" %}" alt="">
-                            <h3>Anthony Connor</h3>
-                            <small>Software Developer</small>
+                            <h3>Angela Danil</h3>
+                            <small>Web Designer</small>
                             <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
                                 interduml"</p>
                         </div>
                     </div>
-                    <div class="col-md-4 text-center">
+                    <div class="col-sm-4 text-center">
                         <div class="say-container">
                             <img class="img-circle img-responsive" src="{% static "hw3/img/img3-sm.jpg" %}" alt="">
                             <h3>Anthony Connor</h3>
@@ -331,7 +626,6 @@
         </div>
     </div>
 
-
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -405,19 +699,22 @@
                 </div>
                 <div class="col-md-3">
 
-                    <a href="#" class="social">
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="Facebook">
                         <i class="fa fa-facebook"></i>
-                        <span class="tooltiptext">Facebook</span>
                     </a>
 
-                    <a href="#" class="social"><i class="fa fa-skype"></i><span class="tooltiptext">Facebook</span></a>
-                    <a href="#" class="social"><i class="fa fa-google-plus"></i><span class="tooltiptext">Google+</span></a>
-                    <a href="#" class="social"><i class="fa fa-linkedin"></i><span
-                            class="tooltiptext">LinkedIn</span></a>
-                    <a href="#" class="social"><i class="fa fa-pinterest"></i><span class="tooltiptext">Pinterest</span></a>
-                    <a href="#" class="social"><i class="fa fa-twitter"></i><span class="tooltiptext">Twitter</span></a>
-                    <a href="#" class="social"><i class="fa fa-dribbble"></i><span
-                            class="tooltiptext">Dribble</span></a>
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="Skype"><i
+                            class="fa fa-skype"></i></a>
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="Google+"><i
+                            class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i
+                            class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
+                            class="fa fa-pinterest"></i></a>
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="Twitter"><i
+                            class="fa fa-twitter"></i></a>
+                    <a href="#" class="social" data-toggle="tooltip" data-placement="top" title="Dribbble"><i
+                            class="fa fa-dribbble"></i></a>
                 </div>
             </div>
         </div>
@@ -436,25 +733,8 @@
         jQuery('.light-parallax').parallax("50%", 0.4);
         jQuery('.dark-parallax').parallax("50%", 0.2);
 
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 1) {
-                $('.header').addClass("squeezed");
-            }
-            else {
-                $('.header').removeClass("squeezed");
-            }
-
-        });
         $(document).ready(function () {
-            if ($(window).scrollTop() > 1) {
-                $('.header').addClass("squeezed");
-            }
-            else {
-                $('.header').removeClass("squeezed");
-            }
             jQuery("#video-title-bg").YTPlayer();
-            $('.dropdown-menu.multi-column').css('width', $('.navbar-collapse').css('width'));
-            $('.dropdown-menu.multi-column').css('left', $('.navbar-collapse').position().left - $('.dropdown-menu.multi-column').parent().position().left + 20);
             $('.video-title').css('height', window.innerHeight + 'px');
             $('#video-title-text').css('padding-top', window.innerHeight / 2 - $('#video-title-text').height() / 2 + 'px');
 
@@ -485,18 +765,76 @@
             });
 
             $(".latest-carousel").owlCarousel({
-
                 singleItem: true
-
             });
+
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+
+            $('.shopping-cart-menu').css("left", ($('.icons-cart').position().left + $('.icons-cart').width() - 250));
         });
 
         $(window).resize(function () {
-            $('.dropdown-menu.multi-column').css('width', $('.navbar-collapse').css('width'));
-            $('.dropdown-menu.multi-column').css('left', $('.navbar-collapse').position().left - $('.dropdown-menu.multi-column').parent().position().left);
             $('.video-title').css('height', window.innerHeight + 'px');
             $('#video-title-text').css('padding-top', window.innerHeight / 2 - $('#video-title-text').height() / 2 + 'px');
-
+            $('.shopping-cart-menu').css("left", ($('.icons-cart').position().left + $('.icons-cart').width() - $('.shopping-cart-menu').width()));
         });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 0) {
+                if (!($(".top-nav").hasClass("squeezed"))) {
+                    if ($(window).width() >= 992) {
+                        $(".search-line").animate({
+                            height: "70px"
+                        }, 500);
+                        $(".search-input").animate({
+                            fontSize: "25px"
+                        }, 500);
+                    }
+
+                    $(".top-nav").addClass("squeezed");
+                }
+            }
+            else {
+                if (($(".top-nav").hasClass("squeezed"))) {
+                    $(".top-nav").removeClass("squeezed");
+                    if ($(window).width() >= 992) {
+                        $(".search-line").css("height", "94px");
+                        $(".search-input").css("font-size", "33px");
+                    }
+                }
+            }
+        });
+
+        $(".icons-search").click(function () {
+            if ($(this).hasClass("active")) {
+                console.log("asd");
+                $(".icons-search").html('<i class="fa fa-search" aria-hidden="true"></i>');
+                $(".search-line").fadeOut(700);
+                $(".icons-search").removeClass("active");
+            }
+            else {
+                $(".icons-search").addClass("active");
+                $(".search-line").fadeIn(700);
+                $(".icons-search").html('<i class="fa fa-times" aria-hidden="true"></i>');
+            }
+        });
+
+        $(".top-nav-menu>li>a").click(function () {
+            event.preventDefault();
+            if ($(this).parent().hasClass("active")) {
+                $(".top-nav-menu>li.active").removeClass("active");
+            }
+            else {
+                $(".top-nav-menu>li.active").removeClass("active");
+                $(this).parent().addClass("active");
+            }
+        });
+
+        $(".top-nav-hamburger").click(function () {
+            $(".top-navbar").toggle("slow");
+        });
+
     </script>
 {% endblock %}
