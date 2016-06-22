@@ -40,6 +40,15 @@ p {
 .navbar-icons {
     display: block;
     float: right;
+    padding-left: 20px;
+}
+
+.navbar-icons a {
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 93px;
+    color: #fff;
 }
 
 .navbar .container-fluid {
@@ -59,8 +68,8 @@ p {
     vertical-align: middle;
 }
 
-.navbar-icons a {
-    font-size: 16px !important;
+.navbar-icons .row {
+    margin: 0px 15px;
 }
 
 .squeezed {
@@ -71,7 +80,8 @@ p {
     transition: all 0.5s ease;
 }
 
-.squeezed .navbar-brand {
+.squeezed .navbar-brand,
+.squeezed .navbar-icons a {
     height: 70px;
     max-height: 70px;
     line-height: 70px;
@@ -219,6 +229,7 @@ p {
     border: none;
     background-color: #000;
     line-height: 1.42857143;
+    position: relative;
 }
 
 .thumbnail:hover {
@@ -254,8 +265,8 @@ a.fancybox {
 .zoom-icon {
     visibility: hidden;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 45%;
     z-index: 1;
     color: #fff;
     background: #72c02c;
@@ -264,8 +275,6 @@ a.fancybox {
     width: 50px;
     height: 50px;
     font-size: 22px;
-    margin-top: -25%;
-    margin-left: -25px;
     border-radius: 50%;
 }
 
@@ -382,10 +391,15 @@ a.fancybox:hover .zoom-icon {
     padding: 0px 7px;
     color: #777;
     font-size: 16px;
+    position: relative;
+}
+
+.social:hover {
+    color: #777;
 }
 
 .content > .container > .row {
-    padding: 60px 0;
+    padding: 10px 0px 50px;
 }
 
 .fa-shopping-cart .badge {
@@ -409,16 +423,290 @@ a.fancybox:hover .zoom-icon {
     transition: all .5s ease;
 }
 
-.collapse .navbar-nav > li.open > .dropdown-menu {
-    display: none;
+.collapse .dropdown-menu {
     border-top: solid #72c02c;
 }
 
-.collapse .navbar-nav > li:hover > .dropdown-menu {
-    display: block;
-    border-top: solid #72c02c;
+.collapse .navbar-nav li.open > .dropdown-menu {
+
 }
 
-.squeezed .collapse .navbar-nav > li.active {
+.squeezed .collapse .navbar-nav li.active > a {
     color: #72c02c;
+}
+
+.dropdown-menu {
+    font-size: 13px;
+    min-width: 260px;
+    padding-top: 10px;
+}
+
+.dropdown-menu li:hover > a, .dropdown-menu li.active > a, .dropdown-menu li.active:hover > a {
+    color: #72c02c;
+}
+
+.dropdown-submenu > a:after {
+    font-size: 11px;
+    content: "\f105";
+    font-weight: normal;
+    display: inline-block;
+    float: right;
+    font-family: FontAwesome;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+}
+
+.dropdown-menu > li > a, .dropdown-menu > li > a:hover,
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover {
+    background: #fff;
+}
+
+.marked-menu > li > a:before {
+    content: "- ";
+}
+
+.dropdown-menu.multi-column {
+    position: absolute;
+}
+
+.multi-column-dropdown {
+    list-style: none;
+    padding: 20px;
+}
+
+.multi-column-dropdown li a {
+    display: block;
+    line-height: 1.428571429;
+    color: inherit;
+}
+
+.multi-column-dropdown li a:hover {
+    color: #72c02c;
+    background-color: #f5f5f5;
+}
+
+.multi-column .col-sm-3:not(:first-child) {
+    border-left: 1px solid;
+}
+
+.multi-column-dropdown a i {
+    padding-right: 7px;
+}
+
+.dropdown-menu li {
+    padding: 5px 0;
+}
+
+.multi-column .row {
+    display: table;
+}
+
+.multi-column .col-sm-3 {
+    float: none;
+    display: table-cell;
+}
+
+.recent-works {
+    padding-top: 40px;
+}
+
+.light-parallax {
+    padding: 20px;
+}
+
+.green-tick {
+    list-style: none;
+}
+
+.green-tick > li:before {
+    content: "\f00c";
+    font-weight: normal;
+    display: inline-block;
+    float: left;
+    color: #72c02c;
+    font-family: FontAwesome;
+    padding-right: 10px;
+}
+
+.green-line-left:before {
+    z-index: 1;
+    width: 30px;
+    height: 2px;
+    content: " ";
+    top: 40px;
+    left: 5px;
+    position: absolute;
+    background: #72c02c;
+}
+
+.green-line-center:before {
+    z-index: 1;
+    width: 30px;
+    height: 2px;
+    content: " ";
+    top: 40px;
+    left: 49%;
+    position: absolute;
+    background: #72c02c;
+}
+
+.green-line-left,
+.green-line-center {
+    padding-bottom: 20px;
+}
+
+.col-header {
+    position: relative;
+}
+
+.latest-posts {
+    padding-right: 20px;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.latest-posts ul small {
+    display: block;
+    color: #999;
+    font-size: 85%;
+}
+
+.footer li {
+    display: block;
+    padding: 10px 0;
+}
+
+.footer li:not(:first-child) {
+    border-top: solid 1px #555;
+}
+
+.footer li a, .footer li a:hover {
+    color: #eee;
+}
+
+.headline {
+    display: block;
+    border-bottom: dotted 1px #fff;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.headline h4 {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: solid 2px #72c02c;
+    margin: -1px;
+    z-index: 2;
+}
+
+.useful-links {
+    font-size: 11px;
+}
+
+.useful-links i {
+    display: inline-block;
+    float: right;
+}
+
+.footer address {
+    padding-top: 5px;
+}
+
+.footer address a {
+    color: #72c02c;
+}
+
+.social .tooltiptext {
+    visibility: hidden;
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+    bottom: 100%;
+    left: -10px;
+    margin-left: 0px;
+    margin-bottom: 7px;
+    font-size: 10px;
+}
+
+.social .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 22px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.social:hover .tooltiptext {
+    visibility: visible;
+}
+
+.cart {
+    display: inline-block;
+    position: relative;
+}
+
+.cart-content {
+    visibility: hidden;
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    width: 250px;
+    right: 0px;
+    border-top: solid 3px #72c02c;
+    padding: 10px;
+}
+
+.cart:hover .cart-content {
+    visibility: visible;
+}
+
+.cart-products, .cart-footer {
+    display: block;
+    padding: 10px;
+}
+
+.cart-products {
+    border-bottom: solid 1px;
+    text-transform: uppercase;
+}
+
+.cart-footer button i {
+    padding-right: 5px;
+}
+
+.cart-footer span {
+    display: inline-block;
+    float: right;
+    padding-top: 7px;
+}
+
+@media screen and (min-width: 981px) {
+    .navbar-nav > li:hover > .dropdown-menu {
+        display: block;
+    }
 }
