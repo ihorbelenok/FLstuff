@@ -821,7 +821,7 @@
             }
         });
 
-        $(".top-nav-menu>li>a").click(function () {
+        $(".top-nav-menu>li>a").vclick(function () {
             event.preventDefault();
             if ($(this).parent().hasClass("active")) {
                 $(".top-nav-menu>li.active").removeClass("active");
@@ -832,9 +832,10 @@
             }
         });
 
-        $(".top-nav-hamburger").click(function () {
+        $(".top-nav-hamburger").vclick(function () {
             $(".top-navbar").toggle("slow");
         });
+
 
     </script>
 {% endblock %}
