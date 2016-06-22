@@ -809,14 +809,15 @@
 
         $(".icons-search").tap(function () {
             if ($(this).hasClass("active")) {
-                console.log("asd");
                 $(".icons-search").html('<i class="fa fa-search" aria-hidden="true"></i>');
-                $(".search-line").fadeOut(700);
-                $(".icons-search").removeClass("active");
+                $(".search-line").fadeOut(700, function () {
+                    $(".icons-search").removeClass("active");
+                });
             }
             else {
-                $(".icons-search").addClass("active");
-                $(".search-line").fadeIn(700);
+                $(".search-line").fadeIn(700, function () {
+                    $(".icons-search").addClass("active");
+                });
                 $(".icons-search").html('<i class="fa fa-times" aria-hidden="true"></i>');
             }
         });
