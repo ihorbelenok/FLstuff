@@ -807,7 +807,7 @@
             }
         });
 
-        $(".icons-search").click(function () {
+        $(".icons-search").tap(function () {
             if ($(this).hasClass("active")) {
                 console.log("asd");
                 $(".icons-search").html('<i class="fa fa-search" aria-hidden="true"></i>');
@@ -821,7 +821,7 @@
             }
         });
 
-        $(".top-nav-menu>li>a").vclick(function () {
+        $(".top-nav-menu>li>a").tap(function () {
             event.preventDefault();
             if ($(this).parent().hasClass("active")) {
                 $(".top-nav-menu>li.active").removeClass("active");
@@ -832,7 +832,7 @@
             }
         });
 
-        $(".top-nav-hamburger").vclick(function () {
+        $(".top-nav-hamburger").tap(function () {
             $(".top-navbar").toggle("slow");
         });
 
