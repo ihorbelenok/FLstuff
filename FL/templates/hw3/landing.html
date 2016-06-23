@@ -509,36 +509,34 @@
             <p>Integer odio ligula, tincidunt id volutpat et, imperdiet eget mi. Quisque laoreet porttitor turpis sed
                 fermentum. Nullam sodales blandit nisi, tristique tempor nunc hendrerit at. Sed posuere mollis orci</p>
             <div class="row">
-                <div class="row">
-                    <div class="col-sm-4 text-center">
-                        <div class="say-container">
-                            <img class="img-circle img-responsive" src="{% static "hw3/img/img1-sm.jpg" %}" alt="">
-                            <h3>Anthony Connor</h3>
-                            <small>Software Developer</small>
-                            <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
-                                interduml"</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center">
-                        <div class="say-container">
-                            <img class="img-circle img-responsive" src="{% static "hw3/img/img2-sm.jpg" %}" alt="">
-                            <h3>Angela Danil</h3>
-                            <small>Web Designer</small>
-                            <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
-                                interduml"</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 text-center">
-                        <div class="say-container">
-                            <img class="img-circle img-responsive" src="{% static "hw3/img/img3-sm.jpg" %}" alt="">
-                            <h3>Anthony Connor</h3>
-                            <small>Software Developer</small>
-                            <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
-                                interduml"</p>
-                        </div>
+
+                <div class="col-sm-4 text-center">
+                    <div class="say-container">
+                        <img class="img-circle img-responsive" src="{% static "hw3/img/img1-sm.jpg" %}" alt="">
+                        <h3>Anthony Connor</h3>
+                        <small>Software Developer</small>
+                        <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
+                            interduml"</p>
                     </div>
                 </div>
-
+                <div class="col-sm-4 text-center">
+                    <div class="say-container">
+                        <img class="img-circle img-responsive" src="{% static "hw3/img/img2-sm.jpg" %}" alt="">
+                        <h3>Angela Danil</h3>
+                        <small>Web Designer</small>
+                        <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
+                            interduml"</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <div class="say-container">
+                        <img class="img-circle img-responsive" src="{% static "hw3/img/img3-sm.jpg" %}" alt="">
+                        <h3>Anthony Connor</h3>
+                        <small>Software Developer</small>
+                        <p>"Proin et augue vel nisi rhoncus tincidunt. Cras venenatis, magna id sem ipsum mi
+                            interduml"</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -781,7 +779,7 @@
             $('.shopping-cart-menu').css("left", ($('.icons-cart').position().left + $('.icons-cart').width() - $('.shopping-cart-menu').width()));
         });
 
-        $(window).scroll(function () {
+        $(document).on('scrollstop', function () {
             if ($(window).scrollTop() > 0) {
                 if (!($(".top-nav").hasClass("squeezed"))) {
                     if ($(window).width() >= 992) {
