@@ -37,6 +37,9 @@ class Hotel(models.Model):
 
     description = models.TextField()
 
+    def __str__(self):
+        return "%s (%s, %s)" % (self.name, self.city, self.city.country)
+
 
 class Tour(models.Model):
     hotel = models.ForeignKey("Hotel")
@@ -47,6 +50,9 @@ class Tour(models.Model):
     available_places = models.IntegerField()
     description = models.TextField()
 
+    def __str__(self):
+        return "%s (%s - %s)" % (self.hotel, self.start_date, self.end_date)
+
 
 class Client(models.Model):
     first_name = models.CharField(max_length=32)
@@ -56,15 +62,24 @@ class Client(models.Model):
     # new offers subscription
     subscription = models.BooleanField(default=True)
 
+    def __str__(self):
+        return "%s %s" % (self.first_name, self.last_name)
+
 
 class Phone(models.Model):
-    address = models.CharField(max_length=16)
+    number = models.CharField(max_length=16)
     client = models.ForeignKey("Client")
+
+    def __str__(self):
+        return "%s phone" % (self.client)
 
 
 class Email(models.Model):
     address = models.EmailField()
     client = models.ForeignKey("Client")
+
+    def __str__(self):
+        return "%s e-mail" % (self.client)
 
 
 class OrderStatus(models.Model):
@@ -81,3 +96,6 @@ class Order(models.Model):
     discount = models.DecimalField(decimal_places=2, max_digits=8)
     total = models.DecimalField(decimal_places=2, max_digits=8)
     status = models.ForeignKey("OrderStatus")
+
+    def __str__(self):
+        return "%s to %s" % (self.client, self.tour)
