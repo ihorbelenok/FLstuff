@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'FL',
     # 'warehouse',
-    'tour'
+    # 'tour',
+    'taxi',
 ]
 
 MIDDLEWARE_CLASSES = [
