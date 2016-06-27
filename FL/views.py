@@ -64,7 +64,8 @@ def hw3(request):
     return render(request, 'hw3/landing.html')
 
 
-
+def landing_1(request):
+    return render(request, 'landings/landing_1.html')
 
 def frontpage(request):
     return render(request, 'frontpage.html')

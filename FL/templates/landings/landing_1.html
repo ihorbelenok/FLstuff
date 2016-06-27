@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block title %} Home Basic 3 | Unify - Responsive Website Template {% endblock title %}
+
+{% block extra_css %}
+    <!-- Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+    <!-- ion icons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- wow animation-->
+    <link rel="stylesheet" href="{% static "landings/1/css/animate.css" %}">
+    <!-- custom -->
+    <link rel="stylesheet" href="{% static "landings/1/css/custom.css" %}">
+
+    <script>
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(51.521470, 30.760271),
+                zoom: 7,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map"), mapProp);
+        }
+
+        function loadScript() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDIlfcNMYgTnelSP8enG4afJ2D5PSWCBx4&callback=initialize";
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
+
+    </script>
+
+
+{% endblock %}
+
+
+
+{% block body %}
+    <div class="navbar light scrollspy">
+        <div class="container">
+            <div class="navbar-logo">
+                <a href="#">
+                    <img class="logo-dark" src="{% static "landings/1/img/logo-black.png" %}" alt="logo">
+                    <img class="logo-light" src="{% static "landings/1/img/logo-white.png" %}" alt="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <h1>Present your Product with Our Landing Page</h1>
+            <h2>Responsive Multipurpose Landing Page</h2>
+            <a href="#" class="btn btn-info wow flipInX" data-wow-duration="1s" data-wow-delay=".5s">Contact me</a>
+            <div class="row header-img">
+                <div class="col-md-6">
+                    <div class="example-screen example-left wow fadeInLeft" data-wow-duration="1s"
+                         data-wow-delay=".5s">
+                        <img class="img-responsive" src="{% static "landings/1/img/example1both.png" %}"
+                             alt="example screen">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="example-screen example-right wow fadeInRight" data-wow-duration="1s"
+                         data-wow-delay=".5s">
+                        <img class="img-responsive" src="{% static "landings/1/img/example2both.png" %}"
+                             alt="example screen">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-partners lighter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="partner-logo-wrap">
+                        <div class="partner-cover"></div>
+                        <img src="{% static "landings/1/img/Lorem.png" %}" alt="Lorem">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="partner-logo-wrap">
+                        <div class="partner-cover"></div>
+                        <img src="{% static "landings/1/img/Ipsum.png" %}" alt="Ipsum">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="partner-logo-wrap">
+                        <div class="partner-cover"></div>
+                        <img src="{% static "landings/1/img/Dolor.png" %}" alt="Dolor">
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="partner-logo-wrap">
+                        <div class="partner-cover"></div>
+                        <img src="{% static "landings/1/img/Hodor.png" %}" alt="Hodor">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic lightest">
+        <div class="container">
+            <div class="topic-header">
+                <i class="ion ion-cube"></i>
+                <h2>Modern Tools</h2>
+                {% lorem 1 p random %}
+            </div>
+            <div class="separator-center"></div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <i class="ion ion-ios-browsers-outline feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+
+                <div class="col-sm-3">
+                    <i class="ion ion-ios-lightbulb-outline feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+
+                <div class="col-sm-3">
+                    <i class="ion ion-wand feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+
+                <div class="col-sm-3">
+                    <i class="ion ion-ios-speedometer-outline feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="topic lightest">
+        <div class="topic-tab-menu">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a href="#tab-about-1" data-toggle="tab">{% lorem 1 w random %}</a></li>
+                <li><a href="#tab-about-2" data-toggle="tab">{% lorem 1 w random %}</a></li>
+                <li><a href="#tab-about-3" data-toggle="tab">{% lorem 1 w random %}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-content lightest">
+        <div class="tab-pane active" id="tab-about-1">
+            <div class="container">
+                <div class="topic-header">
+                    {% lorem 1 p random %}
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 steps">
+                        <h4>
+                            <span>1</span>
+                            {% lorem 2 w random %}
+                        </h4>
+                        {% lorem 1 p random %}
+                    </div>
+                    <div class="col-sm-4 steps">
+                        <h4>
+                            <span>2</span>
+                            {% lorem 2 w random %}
+                        </h4>
+                        {% lorem 1 p random %}
+                    </div>
+                    <div class="col-sm-4 steps">
+                        <h4>
+                            <span>3</span>
+                            {% lorem 2 w random %}
+                        </h4>
+                        {% lorem 1 p random %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-about-2">
+            <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6">
+                    <div class="map-container" id="map" style="width:500px;height:380px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-about-3">
+            {% lorem 1 p random %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block extra_js %}
+    <script src="{% static "landings/1/js/wow.min.js" %}"></script>
+
+
+
+    <script>
+        new WOW().init();
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 0) {
+                $(".navbar").removeClass("light");
+                $(".navbar").addClass("dark");
+            }
+            else {
+                $(".navbar").removeClass("dark");
+                $(".navbar").addClass("light");
+            }
+        });
+
+
+    </script>
+
+{% endblock %}
