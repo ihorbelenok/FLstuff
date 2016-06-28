@@ -9,34 +9,17 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- wow animation-->
     <link rel="stylesheet" href="{% static "landings/1/css/animate.css" %}">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="{% static "landings/1/css/owl.carousel.css" %}">
     <!-- custom -->
     <link rel="stylesheet" href="{% static "landings/1/css/custom.css" %}">
 
-    <script>
-        function initialize() {
-            var mapProp = {
-                center: new google.maps.LatLng(51.521470, 30.760271),
-                zoom: 7,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("map"), mapProp);
-        }
 
-        function loadScript() {
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDIlfcNMYgTnelSP8enG4afJ2D5PSWCBx4&callback=initialize";
-            document.body.appendChild(script);
-        }
-
-        window.onload = loadScript;
-
-    </script>
 
 
 {% endblock %}
 
-
+{% block body_classes %}data-spy="scroll" data-target=".navbar" data-offset="50"{% endblock body_classes %}
 
 {% block body %}
     <div class="navbar light scrollspy">
@@ -47,23 +30,38 @@
                     <img class="logo-light" src="{% static "landings/1/img/logo-white.png" %}" alt="logo">
                 </a>
             </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#stuff">Some Stuff</a></li>
+                    <li><a href="#hodor">Hodor</a></li>
+                    <li><a href="#inspiring">Inspiring</a></li>
+                    <li><a href="#comments">Comments</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div class="header">
+    <div class="header" id="home">
         <div class="container">
             <h1>Present your Product with Our Landing Page</h1>
             <h2>Responsive Multipurpose Landing Page</h2>
             <a href="#" class="btn btn-info wow flipInX" data-wow-duration="1s" data-wow-delay=".5s">Contact me</a>
             <div class="row header-img">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <div class="example-screen example-left wow fadeInLeft" data-wow-duration="1s"
                          data-wow-delay=".5s">
                         <img class="img-responsive" src="{% static "landings/1/img/example1both.png" %}"
                              alt="example screen">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <div class="example-screen example-right wow fadeInRight" data-wow-duration="1s"
                          data-wow-delay=".5s">
                         <img class="img-responsive" src="{% static "landings/1/img/example2both.png" %}"
@@ -77,72 +75,71 @@
     <div class="header-partners lighter">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                     <div class="partner-logo-wrap">
                         <div class="partner-cover"></div>
-                        <img src="{% static "landings/1/img/Lorem.png" %}" alt="Lorem">
+                        <img src="{% static "landings/1/img/Lorem.png" %}" alt="Lorem" class="img-responsive">
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                     <div class="partner-logo-wrap">
                         <div class="partner-cover"></div>
-                        <img src="{% static "landings/1/img/Ipsum.png" %}" alt="Ipsum">
+                        <img src="{% static "landings/1/img/Ipsum.png" %}" alt="Ipsum" class="img-responsive">
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                     <div class="partner-logo-wrap">
                         <div class="partner-cover"></div>
-                        <img src="{% static "landings/1/img/Dolor.png" %}" alt="Dolor">
+                        <img src="{% static "landings/1/img/Dolor.png" %}" alt="Dolor" class="img-responsive">
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                     <div class="partner-logo-wrap">
                         <div class="partner-cover"></div>
-                        <img src="{% static "landings/1/img/Hodor.png" %}" alt="Hodor">
+                        <img src="{% static "landings/1/img/Hodor.png" %}" alt="Hodor" class="img-responsive">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="topic lightest">
+    <div class="topic lightest" id="tools">
         <div class="container">
-            <div class="topic-header">
+            <div class="topic-header text-center narrow">
                 <i class="ion ion-cube"></i>
                 <h2>Modern Tools</h2>
                 {% lorem 1 p random %}
             </div>
             <div class="separator-center"></div>
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <i class="ion ion-ios-browsers-outline feature-icon"></i>
                     <h4>{% lorem 2 w random %}</h4>
                     {% lorem 1 p random %}
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <i class="ion ion-ios-lightbulb-outline feature-icon"></i>
                     <h4>{% lorem 2 w random %}</h4>
                     {% lorem 1 p random %}
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <i class="ion ion-wand feature-icon"></i>
                     <h4>{% lorem 2 w random %}</h4>
                     {% lorem 1 p random %}
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <i class="ion ion-ios-speedometer-outline feature-icon"></i>
                     <h4>{% lorem 2 w random %}</h4>
                     {% lorem 1 p random %}
                 </div>
-
             </div>
         </div>
     </div>
 
-    <div class="topic lightest">
+    <div class="topic lightest" id="stuff">
         <div class="topic-tab-menu">
             <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a href="#tab-about-1" data-toggle="tab">{% lorem 1 w random %}</a></li>
@@ -154,6 +151,41 @@
 
     <div class="tab-content lightest">
         <div class="tab-pane active" id="tab-about-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="topic-header">
+                            <i class="ion ion-location"></i>
+                            <h2>Some stuff</h2>
+                        </div>
+                        {% lorem 1 p random %}
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="checked">
+                                    <li>
+
+                                        {% lorem 2 w random %}
+                                    </li>
+                                    <li>{% lorem 2 w random %}</li>
+                                    <li>{% lorem 2 w random %}</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="checked">
+                                    <li>{% lorem 2 w random %}</li>
+                                    <li>{% lorem 2 w random %}</li>
+                                    <li>{% lorem 2 w random %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="map-container" id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-about-2">
             <div class="container">
                 <div class="topic-header">
                     {% lorem 1 p random %}
@@ -183,16 +215,227 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane" id="tab-about-2">
+        <div class="tab-pane" id="tab-about-3">
+            <div class="container text-center">
+                <div class="video-container embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-WlursYvfTY"></iframe>
+                </div>
+                {% lorem 1 p random %}
+            </div>
+        </div>
+    </div>
+
+    <div class="topic lighter" id="hodor">
+        <div class="container">
+            <div class="topic-header text-center">
+                <i class="ion ion-ribbon-a"></i>
+                <h2>Hodor hodor hodor?</h2>
+                {% lorem 1 p random %}
+            </div>
+        </div>
+        <div class="container">
             <div class="row">
-                <div class="col-sm-6"></div>
-                <div class="col-sm-6">
-                    <div class="map-container" id="map" style="width:500px;height:380px;"></div>
+                <div class="col-md-3 text-center padding-md">
+                    <i class="ion ion-ios-people-outline feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+                <div class="col-md-3 text-center padding-md">
+                    <i class="ion ion-android-compass feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+                <div class="col-md-3 text-center padding-md">
+                    <i class="ion ion-social-tux feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
+                </div>
+                <div class="col-md-3 text-center padding-md">
+                    <i class="ion ion-android-wifi feature-icon"></i>
+                    <h4>{% lorem 2 w random %}</h4>
+                    {% lorem 1 p random %}
                 </div>
             </div>
         </div>
-        <div class="tab-pane" id="tab-about-3">
-            {% lorem 1 p random %}
+
+        <div class="container">
+            <div class="row">
+                <div class="row-height">
+                    <div class="col-md-4 col-md-height padding-md">
+                        <div class="inside-full-height">
+                            <div class="rising lightest">
+                                <div class="topic-header text-center">
+                                    <i class="ion ion-cube"></i>
+                                    <h2>Modern Tools</h2>
+                                    {% lorem 1 p random %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-height padding-md">
+                        <div class="inside-full-height">
+                            <div class="rising lightest">
+                                <div class="topic-header text-center">
+                                    <i class="ion ion-cube"></i>
+                                    <h2>Modern Tools</h2>
+                                    {% lorem 1 p random %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-height padding-md">
+                        <div class="inside inside-full-height">
+                            <div class="rising lightest">
+                                <div class="topic-header text-center">
+                                    <i class="ion ion-cube"></i>
+                                    <h2>Modern Tools</h2>
+                                    {% lorem 1 p random %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-window" id="inspiring" data-parallax="scroll"
+         data-image-src="/static{% static "/landings/1/img/parallax.jpg" %}">
+        <div class="container text-center">
+            <h1>
+                Some inspiring words
+            </h1>
+            <h3>{% lorem 1 p random %}</h3>
+            <a href="#" class="btn btn-info">Contact me</a>
+        </div>
+        <div class="container statistics text-center">
+            <div class="row">
+                <div class="col-sm-3">
+                    <span id="downloads">0</span>
+                    <p>Downloads</p>
+                </div>
+                <div class="col-sm-3"><span id="newsletter">0</span>
+                    <p>Newsletters</p></div>
+                <div class="col-sm-3"><span id="clients">0</span>
+                    <p>Clients</p></div>
+                <div class="col-sm-3"><span id="websites">0</span>
+                    <p>Websites</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic" id="comments">
+        <div id="owl-demo">
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person1.png" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person2.jpg" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person3.jpg" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person4.png" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person5.jpg" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person6.jpg" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+            <div class="item rising lighter text-center">
+                <img src="{% static "landings/1/img/Person7.jpg" %}" alt="Commentator" class="img-circle">
+                {% lorem %}
+                <p class="comment-name">{% lorem 2 w random %}</p>
+                <p class="comment-job">{% lorem 2 w %}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 footer-logo">
+                    <img src="{% static "landings/1/img/logo-white.png" %}" alt="logo" class="logo-light">
+                    {% lorem 1 p random %}
+                </div>
+                <div class="col-sm-4 footer-interesting">
+                    <h3>Something interesting</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                                <li>
+                                    <a href="#">{% lorem 2 w random %}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 footer-payment">
+                    <h3>Payment methods</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="{% static "landings/1/img/visa.png" %}" alt="Visa" class="img-responsive">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="{% static "landings/1/img/mastercard.png" %}" alt="MasterCard"
+                                 class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="{% static "landings/1/img/paypal.png" %}" alt="PayPal" class="img-responsive">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="{% static "landings/1/img/verisign.png" %}" alt="Verisign" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -205,11 +448,45 @@
 
 {% block extra_js %}
     <script src="{% static "landings/1/js/wow.min.js" %}"></script>
-
-
+    <script src="{% static "landings/1/js/parallax.min.js" %}"></script>
+    <script src="{% static "landings/1/js/jquery.animateNumber.min.js" %}"></script>
+    <script src="{% static "landings/1/js/owl.carousel.min.js" %}"></script>
 
     <script>
         new WOW().init();
+
+        $(document).ready(function () {
+
+            var owl = $("#owl-demo");
+
+            owl.owlCarousel({
+                itemsDesktop: [1199, 5],
+                itemsDesktopSmall: [979, 4],
+                itemsTablet: [768, 2],
+                itemsMobile: [479, 1],
+                autoPlay: true,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    750: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 5
+                    }
+                }
+            });
+
+        });
+
+
+        var statistics_shown = false;
+
         $(window).on("scroll", function () {
             if ($(window).scrollTop() > 0) {
                 $(".navbar").removeClass("light");
@@ -219,9 +496,33 @@
                 $(".navbar").removeClass("dark");
                 $(".navbar").addClass("light");
             }
+
+            if (($(window).scrollTop() + $(window).height() > $(".statistics").offset().top) & (!statistics_shown)) {
+                $('#downloads').animateNumber({number: 7777}, 3000);
+                $('#newsletter').animateNumber({number: 4400}, 3500);
+                $('#clients').animateNumber({number: 900}, 4000);
+                $('#websites').animateNumber({number: 15000}, 4500);
+                statistics_shown = true;
+            }
         });
+
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 51.52149, lng: 30.760221},
+                zoom: 11
+            });
+
+            var marker = new google.maps.Marker({
+                position: {lat: 51.52149, lng: 30.760221},
+            });
+
+            marker.setMap(map);
+        }
 
 
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIlfcNMYgTnelSP8enG4afJ2D5PSWCBx4&callback=initMap"
+            async defer></script>
 
 {% endblock %}
