@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'FL',
     # 'warehouse',
     # 'tour',
-    'taxi',
+    # 'taxi',
+    'pizza',
+    'coupon',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from FL import views
+from pizza import admin as pizza_admin
 
 urlpatterns = [
     url(r'^$', views.frontpage, name='frontpage'),
