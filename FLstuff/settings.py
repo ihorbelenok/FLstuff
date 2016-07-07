@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'FL',
     # 'warehouse',
     # 'tour',
     # 'taxi',
-    'pizza',
-    'coupon',
+    #'pizza',
+    #'coupon',
+    'testmusicapi',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LASTFM_KEY = '5cec56e2d7c52f5deacb9e8ad4fad74c'
+
+PLEER_KEY = 'hEd0wurCdVIQrCThWfkB'

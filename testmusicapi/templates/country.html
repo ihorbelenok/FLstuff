@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block title %} Country popular {% endblock title %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "libs/owl-carousel/assets/owl.carousel.css" %}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="owl-carousel text-center">
+            {% for artist in artists %}
+                <div class="artist-box">
+                    <div class="artist-img">
+                        <img src="{{ artist.img }}" alt="{{ artist.name }}">
+                    </div>
+                    <div class="artist-description">
+                        <h4>{{ artist.name }}</h4>
+                        <small>Listeners: {{ artist.listeners }}</small><hr>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal{{ forloop.counter0 }}">Info...</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% for artist in artists %}
+        <!-- Modal -->
+        <div id="modal{{ forloop.counter0 }}" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ artist.name }}</h4>
+              </div>
+              <div class="modal-body">
+                <p>{{ artist.info|striptags }}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static "libs/owl-carousel/owl.carousel.min.js" %}"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            autoplay: true,
+            margin: 20,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                750: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+{% endblock %}

@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from FL import views
-from pizza import admin as pizza_admin
+from testmusicapi import views as APIviews
 
 urlpatterns = [
     url(r'^$', views.frontpage, name='frontpage'),
@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^hw2_adv_json/$', views.hw2_table_json, name='hw2_tbl_json'),
     url(r'^hw3/$', views.hw3, name='hw3'),
     url(r'^landings/first/$', views.landing_1, name='landing_1'),
+    url(r'^apitest/$', APIviews.test_view, name='apitest'),
     url(r'^admin/', admin.site.urls),
 ]
